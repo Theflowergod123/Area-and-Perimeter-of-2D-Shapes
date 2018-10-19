@@ -1,0 +1,9 @@
+Classes               Shape (super class)       Rectangle (extends Shape)         Triangle (extends Shape)           Square (extends Shape)
+
+States (attributes)   Length (l)                                                  Second side length (y)          
+                      Height (h)                                                  Third side length (z)
+
+Behaviors (methods)   → Get user input (l, h)   → Calculate perimeter (2l + 2h)   → Get user input (l, h, y, z)      → Calculate area (l^2)
+                      → Constructor             → Calculate area (l * h)          → Constructor                      → Calculate perimeter (4l)
+                      → Display results         → Constructor                     → Calculate perimeter (l + y + z)  → Constructor
+                                                                                  → Calculate area (l * h / 2)
