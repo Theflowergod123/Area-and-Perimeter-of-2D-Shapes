@@ -1,15 +1,15 @@
-- Create an object for the shape (either rectangle, triangle or circle)
+- Create an object for the shape (either rectangle, triangle or square)
 - Get input based on type of shape
-  - length (l) & width (w) for rectangle
-  - base (b), height (h), & lengths of sides (x, y, z) for triangle
-  - radius (r) for circle
+  - length (l) & height (h) for rectangle
+  - base (l), height (h), & lengths of sides (l, y, z) for triangle
+  - length (l) for square
 - Calculate 
   - perimeter
-    - rectangle: 2l + 2w
-    - triangle: x + y + z
-    - circle: 2πr
+    - rectangle: 2l + 2h
+    - triangle: l + y + z
+    - square: 4l
   - area
-    - rectangle: l * w
-    - triangle: (b * h)/2
-    - circle: πr^2
+    - rectangle: l * h
+    - triangle: (l * h)/2
+    - square: l^2
 - Display area and perimeter of the given shape
