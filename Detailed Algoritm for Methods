@@ -1,0 +1,26 @@
+- get user input
+  - ask user what type of shape they would like to create
+  - ask user to enter values for l and h (or whichever variables are required for the given shape)
+  - make sure side lengths are float or integer variables (exception handling)
+  
+- display results 
+  - output area and perimeter of the given shape
+  - if triangle shape is chosen, output triangle type
+  
+- calculate perimeter
+  - overload original method depnding on shape
+    - rectangle: 2l + 2h
+    - triangle: l + y + z
+    - square: 4l
+   
+- calculate area
+  - overload original method depending on shape
+    - rectangle: l * h
+    - triangle: (l * h)/2
+    - square: l^2
+    
+- triangle types
+  - if sides l, y and z are the same size, it is an equilateral
+  - if 2 of the 3 sides are equal, it is isosceles
+  - if none of the sides are equal it is scalene
+  
