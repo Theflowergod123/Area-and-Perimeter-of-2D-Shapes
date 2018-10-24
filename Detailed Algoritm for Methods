@@ -1,5 +1,4 @@
 - get user input
-  - ask user what type of shape they would like to create
   - ask user to enter values for l and h (or whichever variables are required for the given shape)
   - make sure side lengths are float or integer variables (exception handling)
   
