@@ -1,0 +1,26 @@
+Shapes class
+  length variable ('l')
+  width variable ('w')
+  
+  User_input method
+    print "enter a length"
+    set 'l' = input length
+    print "enter a length"
+    set 'w' = input width
+    while true
+      try
+        l and w = double
+        exit loop
+      catch
+        print "enter a number. Try again."
+        reenter input
+    return l and w
+    
+  Display_results method
+    print area and perimeter
+    
+  Main method
+    create new rectangle object
+    create new triangle object
+    create new square object
+    
