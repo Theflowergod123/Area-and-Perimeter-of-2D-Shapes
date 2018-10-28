@@ -23,3 +23,6 @@
   - if 2 of the 3 sides are equal, it is isosceles
   - if none of the sides are equal it is scalene
   
+- validate input
+  - allow user to try again if tehy have not entered a double
+  - call in other input methods
