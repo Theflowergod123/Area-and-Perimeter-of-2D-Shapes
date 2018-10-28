@@ -1,0 +1,221 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shapes;
+
+import java.util.InputMismatchException;
+import java.util.Scanner; 
+/**
+ *
+ * @author ocdsb
+ */
+
+//RECTANGLE 
+public class Shapes {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    //shared attributes
+    double length;
+    double height;
+    double area;
+    double perimeter;
+    
+    //constructor
+    public Shapes(){
+    }
+    
+    //for rectangle
+    public void getInput(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a length: ");
+        this.length = checkInput();
+        System.out.print("Enter a height: ");
+        this.height = checkInput();
+    }
+    
+    //verify if double
+    public double checkInput(){
+        Scanner input = new Scanner(System.in);
+        double Input;
+        while (true){
+            try{
+                Input=input.nextDouble();
+                break;
+            }
+            catch (InputMismatchException e){
+                input.next();
+                System.out.print("try again: ");
+            }
+        }
+        return Input;
+    }
+    
+    //for rectangle (encapsulation)
+    private double calcPerimeter() {
+        this.perimeter = (2 * length) + (2 * height);
+        return this.perimeter;
+    }
+    
+    //for rectangle (encapsulation)
+    private double calcArea() {
+        this.area = length * height;
+        return this.area;
+    }
+    
+    //output values
+    public void displayResults(){
+        System.out.println("The area is: " + area);
+        System.out.println("The perimeter is: " + perimeter);
+    }
+    
+    //to test classes 
+    public static void main(String[] args) {
+        //rectangle
+        Shapes s1 = new Shapes();
+        s1.getInput();
+        s1.calcArea();
+        s1.calcPerimeter();
+        s1.displayResults();
+        
+        Square s2 = new Square();
+        s2.getInput();
+        s2.calcArea();
+        s2.calcPerimeter();
+        s2.displayResults();
+        
+        Triangle s3 = new Triangle();
+        s3.getInput();
+        s3.calcArea();
+        s3.calcPerimeter();
+        s3.displayResults();
+        s3.triangleType(s3.length, s3.sideB, s3.sideC);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shapes;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+/**
+ *
+ * @author ocdsb
+ */
+public class Square extends Shapes{
+    
+    //constructor
+    public Square(){
+    }
+    
+    //don't need height for square (override)
+    @Override
+    public void getInput(){
+        System.out.print("\nEnter a length: ");
+        this.length = checkInput();
+    }
+    
+    public double calcPerimeter() {
+        this.perimeter = 4 * length;
+        return this.perimeter;
+    }
+    
+    public double calcArea() {
+        this.area = length * length;
+        return this.area;
+    }
+    
+}
+
+
+
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shapes;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ocdsb
+ */
+public class Triangle extends Shapes {
+    
+    //unique to triangle
+    double sideB;
+    double sideC; 
+    
+    //constructor
+    public Triangle(){
+    }
+    
+    //add side B and C input
+    @Override
+    public void getInput(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nEnter the length of the base: ");
+        this.length = input.nextDouble();
+        System.out.print("Enter the height: ");
+        this.height = input.nextDouble();
+        System.out.print("Enter the length of one of the other sides: ");
+        this.sideB = input.nextDouble();
+        System.out.print("Enter the length of the last side: ");
+        this.sideC = input.nextDouble();
+    }
+    
+    public double calcPerimeter() {
+        this.perimeter = length + this.sideB + sideC;
+        return this.perimeter;
+    }
+    
+    public double calcArea() {
+        this.area = (length * height)/2;
+        return this.area;
+    }
+    
+    //get lengths of three sides 
+    public void triangleType(double a, double b, double c){
+        if(a==b && b==c){
+            System.out.println("This is an equilateral triangle");
+        }
+        
+        else if(a==b || b==c || c==a){
+            System.out.println("This is an isosceles triangle");
+        }
+        
+        else{
+            System.out.println("This is a scalene triangle");
+        }
+    }
+
+}
+
+
+
