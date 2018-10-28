@@ -3,6 +3,7 @@
   - length (l) & height (h) for rectangle
   - base (l), height (h), & lengths of sides (l, y, z) for triangle
   - length (l) for square
+  - validate input to make sure it is a double
 - Calculate 
   - perimeter
     - rectangle: 2l + 2h
